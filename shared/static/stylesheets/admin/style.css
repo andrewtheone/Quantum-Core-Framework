@@ -1,0 +1,136 @@
+body{
+    background-image: url('/janix/static/shared/images/admin/background.png');
+    background-repeat:repeat-x;
+    color: #f6f6f6;
+}
+
+input[type=text], input[type=password]{
+    
+}
+
+input[type=submit]{
+    min-width: 100px;
+    text-align: center;
+    min-height: 30px;
+    background-color: #0c2652;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.clear{
+    clear: both;
+}
+
+.wrapper{
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    top: -2px;
+    margin: 0px auto;
+    background-image: url('/janix/static/shared/images/admin/wrapper.png');
+}
+
+.wrapper .logo{
+    position: relative;
+    width: 230px;
+    height: 41px;
+    margin-left: 10px;
+    background-image: url('/janix/static/shared/images/admin/logo.png');
+    float: left;
+}
+
+.wrapper .navigation{
+    position: relative;
+    width: 760px;
+    float:left;
+}
+
+.wrapper .content{
+    position: relative;
+    width: 1000px;
+    margin: 0px auto;
+    margin-top: 25px;
+    //background-color: #b76d16;
+    //background-image: url('/janix/static/shared/images/admin/content_background.png');
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.content .aligner{
+    position: relative;
+    top: 15px;
+    padding-bottom: 25px;
+}
+
+.content .login_form_container{
+    position: relative;
+    width: 300px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.login_form_container .label{
+    margin-left: 5px;
+    text-align: right;
+    float: left;
+    width: 75px;
+}
+
+.login_form_container .input{
+    float: right;
+    text-align: left;
+    width: 220px;
+}
+
+.login_form_container .input input{
+    width: 220px;
+}
+
+.error{
+    position: relative;
+    width: 100%;
+    background-color: #e62020;
+    border: 1px solid #b41414;
+}
+
+.categories{
+    position: relative;
+    width: 100%;
+}
+
+.categories .category{
+    position: relative;
+    width: 95%;
+    margin: 0px auto;
+    background-color: #e2e2e2;
+    border: 2px solid #a2a2a2;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: -15px;
+    margin-bottom: 15px;
+}
+
+.categories .category .title{
+    position: relative;
+    text-align: left;
+    color: #0d5c89;
+    font-size: large;
+    border-bottom: 1px solid #a2a2a2;
+    margin-left: -15px;
+    padding-left: 15px;
+    margin-bottom: 5px;
+}
+
+.categories .category .operations{
+    position: relative;
+    overflow: none;
+}
+
+.categories .category .operations .operation{
+    position: relative;
+    margin: 5px;
+    float: left;
+}

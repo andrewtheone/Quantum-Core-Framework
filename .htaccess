@@ -1,0 +1,9 @@
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_URI} (\/static\/)
+   RewriteRule ^static/(.*)$ static.php?route=$1
+
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_URI} !(\/static\/) 
+   RewriteRule ^(.*)$ index.php?route=$1

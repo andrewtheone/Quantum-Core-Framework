@@ -1,0 +1,1 @@
+<?phpclass Html{        static function form( $action, $method = 'POST', $enc_type = NULL )        {        }}
