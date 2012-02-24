@@ -79,6 +79,12 @@ class FormGenerator extends extend{
         return $this;
         }
         
+    public function setValues( $values_query_object )
+        {
+        $this->values = $values_query_object;
+        return $this;
+        }
+        
     public function generate( $push_template = false )
         {
         if( !$push_template )
@@ -97,6 +103,7 @@ class FormGenerator extends extend{
                         $form[$i]['name'] = $field['name'];
                         $form[$i]['field_name'] = $field['field_name'];
                         $form[$i]['content'] = $field['content'];
+                        $form[$i]['value'] = '';
                         $form[$i]['type'] = NULL;
                         $form[$i]['ds'] = NULL;
                         $form[$i]['ds_prim'] = NULL;
@@ -110,6 +117,7 @@ class FormGenerator extends extend{
                     $form[$i]['field_name'] = $row->Field;
                     $form[$i]['name'] = "%database.".$this->data->getTable().".".$row->Field."%";
                     $form[$i]['content'] = NULL;
+                    $form[$i]['value'] = '';
                     $form[$i]['type'] = NULL;
                     $form[$i]['ds'] = NULL;
                     $form[$i]['ds_prim'] = NULL;
@@ -125,8 +133,9 @@ class FormGenerator extends extend{
                             }
                         }
                 }
-                if( array_key_exists("fieldType", $this->rules) )
-                    foreach($form as &$f)
+                foreach($form as &$f)
+                    {
+                    if( array_key_exists("fieldType", $this->rules) )
                         foreach($this->rules["fieldType"] as $ft)
                             {
                             if( $ft['field_name'] == $f['field_name'] )
@@ -139,12 +148,15 @@ class FormGenerator extends extend{
                                     $f['ds_name'] = $ft["datasource_name"];
                                     }
                                 }
-                        }
+                            }
+                    $f['value'] = ($this->values->{$f['field_name']}?$this->values->{$f['field_name']}:'');
+                   }
                 $form['__e']['template'] = $this->template;
                 $form['__e']['template_tag'] = $this->template_tag;
                 $this->forms[] = $form;
                 
                 $this->data = NULL;
+                $this->values = NULL;
                 $this->rules = array();
                 $this->setTemplateTag();
                 $this->setTemplate();

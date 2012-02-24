@@ -17,7 +17,7 @@ foreach($data->form as $field)
                 }
             echo "</select>";
             }else
-            echo "<input type='text' name='".$field['field_name']."'></td></tr>";
+            echo "<input type='text' value='".$field['value']."' name='".$field['field_name']."'></td></tr>";
     }
 ?>
 </table>
